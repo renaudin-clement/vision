@@ -2,7 +2,7 @@
 <html>
 <body>
 
-<canvas id="canvas"></canvas>
+<canvas id="canvas" width="500" height="500"></canvas>
   <img id="source" style='display:none' src="poney"
        width="444" height="222">
 
@@ -19,7 +19,8 @@ for (var i = 0; i < 25; i++) {
         Math.floor(255 - 20 * i) +
         "," +
         Math.floor(255 - 20 * j) +
-        ",0)";
+        "," +
+        Math.floor(0 +j*i) +")";
       ctx.fillRect(j * 25, i * 25, 25, 25);
     }
     }
