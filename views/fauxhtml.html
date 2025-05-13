@@ -2,7 +2,7 @@
 <html>
 <body>
 
-<canvas id="canvas" width="500" height="500"></canvas>
+<canvas id="canvas" width="1200" height="1200"></canvas>
   <img id="source" style='display:none' src="poney"
        width="444" height="222">
 
@@ -12,15 +12,15 @@ var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 var image = document.getElementById("source");
 
-for (var i = 0; i < 25; i++) {
-    for (var j = 0; j < 25; j++) {
+for (var i = 0; i < 1200; i++) {
+    for (var j = 0; j < 1200; j++) {
       ctx.fillStyle =
         "rgb(" +
-        Math.floor(255 - 20 * i) +
+        Math.floor(255  - i/1200) +
         "," +
-        Math.floor(255 - 20 * j) +
+        Math.floor(255  - j/1200) +
         "," +
-        Math.floor(0 +j*i) +")";
+        Math.floor(0 +(j*i)/4) +")";
       ctx.fillRect(j * 25, i * 25, 25, 25);
     }
     }
@@ -32,3 +32,5 @@ ctx.drawImage(image);
 
 </body>
 </html>
+
+https://developer.mozilla.org/fr/docs/Web/API/Canvas_API/Tutorial/Applying_styles_and_colors
