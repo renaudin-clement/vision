@@ -1,0 +1,37 @@
+<div class="quiz">
+    <div class="spaycific-screen-header">Quiz</div>
+    <div class="container regle-du-jeu">
+        <div class="row">
+            <div class="col-md-2 totem-team">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div id="maskedpic" style="height:140px;">
+                            <img ng-if="ctrl.team.selectedAnimal" src="assets/img/animaux/{{ctrl.team.selectedAnimal}}" class="animal-selected-pic" />
+                            <img ng-if="ctrl.team.selectedMask" src="assets/img/masques/{{ctrl.team.selectedMask}}" class="mask-selected-pic" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="teamName">{{ctrl.team.name}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <p><span class="cercles-etapes"><span class="cercle-etape">1</span><span class="cercle-etape">2</span></span></p>
+<p>Tout le monde joue.</p>
+<p>Lancez le chronomètre (bouton).</p>
+<p>Vous devez valider le nom des animaux qui apparaissent à l’écran.</p>
+<p>Certains animaux sont très agrandis et deviennent de plus en plus petits. Il faut les identifier le plus vite possible.</p>
+<p>D’autres sont fantastiques et sont composés de deux animaux réels. Il faut identifier les deux animaux.</p>
+<p>À la fin du temps imparti, le jeu s’arrête.</p>
+<p>Votre score dépend du nombre d’animaux reconnus et validés.</p>
+
+            <div class="row buttonstart">  
+                <p class="next-button-paragraph"><button class="next-button" ng-click="go('/quiz/reconnaitre')">SUIVANT <i class="fa fa-play"></i></button></p>
+                <p class="start-button-paragraph"><button class="start-button" id="choix_equipe"  ng-click="ctrl.Choix()"><i class="fa fa-users"></i> CHOIX EQUIPE</button></p>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>

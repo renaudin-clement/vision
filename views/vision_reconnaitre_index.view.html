@@ -1,0 +1,77 @@
+<div class="quiz">
+    <div class="spaycific-screen-header">Quiz</div>
+    <div class="container regle-du-jeu">
+        <div class="row">
+            <p><span class="cercles-etapes"><span class="cercle-etape encours">1</span><span class="cercle-etape">2</span></span></p>
+            <h2>RÈGLES DU JEU</h2>
+            <p>Tout le monde joue.</p>
+<P>Lancez le chronomètre (bouton "Jouer")</P>
+<p>Vous devez valider le nom des animaux qui apparaissent à l’écran.</p>
+<p>Dans cette partie, certains animaux sont très agrandis et deviennent<br/> de plus en plus petits. Il faut les identifier le plus vite possible.</p>
+<p>À la fin du temps imparti, le jeu s’arrête.</p>
+<p>Votre score dépend du nombre d’animaux reconnus et validés.</p>
+            <p class="start-button-paragraph"><button class="start-button" id="startGame" ng-click="go('/quiz/reconnaitre')"><i class="fa fa-play"></i> JOUER</button></p>
+
+        </div>
+    </div>
+</div>
+<div id="quizGame" style="display:none;">
+    <div class="container">
+        <div class="row">
+            <!--<div class="col-md-6">
+                <!-- p id="cf7_controls">
+                    <span
+                            ng-repeat="photo in ctrl.photos"
+                            ng-class="{selected:$first}"
+                    >{{$index +1}}</span>
+                </p -->
+                <!--<div id="cf7">
+                    <img
+                            ng-repeat="photo in ctrl.photos"
+                            style="
+                                background-image:url('/assets/photos/quizz/{{photo.image}}');
+                            "
+                            id="photo{{$index}}"/>
+                </div>-->
+            <!--</div>-->
+            <div class="col-md-12">
+                <div class="row">
+                    <div id="scoreblock">
+                        <span id="timer">{{ctrl.timer}}</span>
+                                <span id="animalId"></span> 
+                                <span class="next-button-span" style="margin-left:20px;"><button class="next-button btn btn-default" ng-click="ctrl.endGame()">TERMINER <i class="fa fa-play"></i></button></span>
+                    </div>
+                </div>
+                <div class="row buzzers">
+	                <div class="col-md-8 col-md-offset-2"><div class="row">
+                    <div class="col-md-6 card" ng-repeat="button in ctrl.buttons track by $index">
+                        <a id="buzzer{{$index}}">
+                        <div class="card-inner">
+
+                            <!-- img class="card-image" src="/assets/img/silhouettes/gris/{{button.image}}"/ -->
+                            <div class="card-nom" id="buzzer{{$index}}-nom">{{button.nom}}</div>
+                        </div>
+                        </a>
+                    </div>
+                    </div></div>
+                </div>
+                <div class="row">
+                    <p class="next-button-paragraph"><button class="next-button" ng-click="ctrl.showScore()">JE PASSE <i class="fa fa-play"></i></button></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row" id="sounds">
+            <audio id="perdu">
+                <source src="/assets/sounds/j_perdu2.mp3" type="audio/mpeg">
+            </audio>
+            <audio id="gagne">
+                <source src="/assets/sounds/percu_zen.wav" type="audio/wav">
+            </audio>
+        </div>
+    </div>
+</div>
+<div class="row next-button-reconnaitre">
+    <p class="next-button-paragraph"><button class="next-button" ng-click="ctrl.launchQuizHybrides()">SUIVANT <i class="fa fa-play"></i></button></p>
+</div>

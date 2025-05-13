@@ -1,0 +1,103 @@
+<div class="quiz">
+    <div class="spaycific-screen-header">Quiz</div>
+    <div class="container regle-du-jeu">
+        <div class="row">
+            <p><span class="cercles-etapes"><span class="cercle-etape encours">1</span><span class="cercle-etape encours">2</span></span></p>
+            <h2>RÈGLES DU JEU</h2>
+            <p>Tout le monde joue.</p>
+<P>Lancez le chronomètre (BOUTON)</P>
+<p>Vous devez valider le nom des animaux qui apparaissent à l’écran.</p>
+<p>Dans cette deuxième partie, d’autres animaux sont fantastiques<br/> et sont composés de deux animaux réels. Il faut identifier les deux animaux.</p>
+<p>À la fin du temps imparti, le jeu s’arrête.</p>
+<p>Votre score dépend du nombre d’animaux reconnus et validés.</p>
+            <p class="start-button-paragraph"><button class="start-button" id="startGame" ng-click="ctrl.startGame();"><i class="fa fa-play"></i> JOUER</button></p>
+
+        </div>
+    </div>
+</div>
+<div id="theGame" style="display:none;">
+    <div class="row quizGame">
+        <!--<div class="col-md-12">
+            <!-- p id="cf8_controls">
+                <span
+                        ng-repeat="photo in ctrl.photos"
+                        ng-class="{selected:$first}"
+                >{{$index +1}}</span>
+            </p -->
+            <!--<div id="cf8" class="shadow">
+                <img
+                        ng-repeat="photo in ctrl.photos"
+                        style="
+                            background-image:url('/assets/photos/hybrides/{{photo.image}}');
+                        "
+                        id="photo{{$index}}"/>
+            </div>
+        </div>-->
+		<div class="col-md-6 col-md-offset-1">
+                <div class="row">
+                    <div id="scoreblock">
+                        <span id="timer">{{ctrl.timer}}</span>
+                    
+                    </div>
+
+	                    
+                </div>
+		</div>
+        <div class="row buzzers" id="buzzers">
+	        <div class="row">
+            <div class="col-md-2 col-md-offset-1">
+                <button type="button" class="btn btn-info btn-lg btn-block" id="nextPhoto">je passe</button>
+            </div>
+	        </div>
+	        <div class="row">
+		        <div class="col-md-8 col-md-offset-2">
+		        <div style="font-size:22px;text-align:center;">VOUS DEVEZ CHOISIR LES 2 ANIMAUX QUI COMPOSENT LA CHIMERE, L'ANIMAL IMAGINAIRE DE LA PHOTO</div>
+		        </div>
+	        </div>
+			<div class="row" style="margin-top:40px;clear:both;margin-bottom:40px;">
+	            <div class="col-md-4 col-md-offset-2 card">
+    	            <a class="btn btn-success btn-block btn-lg buzzer card-inner" id="buzzer0" style="padding: 40px;font-size: 32px;color: white;font-family: 'Expletus Sans', serif;text-transform: uppercase;font-weight: bold;"><div class="">animal 1</div></a>
+				</div>
+				<div class="col-md-4 card">
+            	    <a class="btn btn-success btn-block btn-lg buzzer card-inner" id="buzzer1" style="padding: 40px;font-size: 32px;color: white;font-family: 'Expletus Sans', serif;text-transform: uppercase;font-weight: bold;">animal 2</a>
+            	</div>
+			</div>
+			<div class="row" style="margin-top:40px;clear:both;">
+	            <div class="col-md-4 col-md-offset-2 card">
+    	            <a class="btn btn-success btn-block btn-lg buzzer card-inner" id="buzzer2" style="padding: 40px;font-size: 32px;color: white;font-family: 'Expletus Sans', serif;text-transform: uppercase;font-weight: bold;">animal 3</a>
+				</div>
+				<div class="col-md-4 card">
+            	    <a class="btn btn-success btn-block btn-lg buzzer card-inner" id="buzzer3" style="padding: 40px;font-size: 32px;color: white;font-family: 'Expletus Sans', serif;text-transform: uppercase;font-weight: bold;">animal 4</a>
+            	</div>
+			</div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row" id="sounds">
+            <audio id="perdu">
+                <source src="/assets/sounds/j_perdu2.mp3" type="audio/mpeg">
+            </audio>
+            <audio id="gagne">
+                <source src="/assets/sounds/percu_zen.wav" type="audio/wav">
+            </audio>
+        </div>
+    </div>
+</div>
+<div class="container score-round">
+    <h2>Votre score</h2>
+    <script>
+
+    </script>
+    <style>
+        input.knob {
+            font-family: 'Poppins', sans-serif !important;
+            font-weight:300 !important;
+        }
+    </style>
+    <div class="score-knob">
+        <input id="score-knob-input" class="knob" data-fgColor="{{ctrl.gameColor}}" data-thickness=".14" data-readOnly=true data-bgColor="#FFFFFF" data-width="200" data-height="200" data-font="Poppins">
+    </div>
+    <div class="row">
+        <p class="next-button-paragraph"><button class="next-button" ng-click="ctrl.gotoGlobalScore()">SUIVANT <i class="fa fa-play"></i></button></p>
+    </div>
+</div>
