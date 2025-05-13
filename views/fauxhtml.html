@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="canvas"></canvas>
+  <img id="source" style='display:none' src="poney"
+       width="444" height="222">
+
+
+<script>
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+var image = document.getElementById("source");
+
+for (var i = 0; i < 25; i++) {
+    for (var j = 0; j < 25; j++) {
+      ctx.fillStyle =
+        "rgb(" +
+        Math.floor(255 - 20 * i) +
+        "," +
+        Math.floor(255 - 20 * j) +
+        ",0)";
+      ctx.fillRect(j * 25, i * 25, 25, 25);
+    }
+    }
+  
+  
+ctx.drawImage(image);
+</script>
+
+
+</body>
+</html>
