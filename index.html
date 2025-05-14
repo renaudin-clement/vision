@@ -9,13 +9,14 @@
     <input id="btnsansrouge" value="btnsansrouge" type="button" />
     <input id="btnsansbleu" value="btnsansbleu" type="button" />
     <input id="btnsansvert" value="btnsansvert" type="button" />
-    
+    <input id="btntritanopie" value="btntritanopie" type="button" />
+    <input id="btnreset" value="btnreset" type="button" />
     </div>
     
     <script>
         var img = new Image();
         img.crossOrigin = "anonymous";
-        img.src = "images/parchemin.jpg";
+        img.src = "images/arc.webp";
         console.log(img.src);
         img.onload = function () {
         dessiner(this);
@@ -30,6 +31,8 @@
 
         var imageData = ctx.getImageData(0, 0, canevas.width, canevas.height);
         var data = imageData.data;
+        var savedata = data;
+
         console.log(data.length);
 
         var inversion = function () {
@@ -78,6 +81,23 @@
             ctx.putImageData(imageData, 0, 0);
         };
 
+        var tritanopie = function () {
+            for (var i = 0; i < data.length; i += 4) {
+            data[i] = data[i]; // rouge
+            data[i + 1] = data[i]; // vert
+            data[i + 2] = 0; // bleu
+            }
+            ctx.putImageData(imageData, 0, 0);
+        };
+
+        var reset = function () {
+            for (var i = 0; i < data.length; i += 4) {
+            data[i] = savedata[i]; // rouge
+            data[i + 1] = savedata[i + 1]; // vert
+            data[i + 2] = savedata[i + 2]; // bleu
+            }
+            ctx.putImageData(imageData, 0, 0);
+        };
 
 
         var btninversion = document.getElementById("btninversion");
@@ -95,6 +115,13 @@
 
         var btnsansvert = document.getElementById("btnsansvert");
         btnsansvert.addEventListener("click", sans_vert);
+
+        var btntritanopie = document.getElementById("btntritanopie");
+        btntritanopie.addEventListener("click", tritanopie);
+
+
+        var btnreset = document.getElementById("btnreset");
+        btnreset.addEventListener("click", reset);
 
         }
     </script>
