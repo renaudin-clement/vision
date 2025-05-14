@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <body>
+    <canvas id="canevas" width="1920" height="512"></canvas>
+    <div>
+    <input id="btnniveaudegris" value="Niveau de gris" type="button" />
+    <input id="btninversion" value="Inversion" type="button" />
+    </div>
+    <img src="./images/buisson2.png"" alt="cc">
+    
+    <script>
+        var img = new Image();
+        img.crossOrigin = "anonymous";
+        img.src = "./images/buisson2.png";
+        console.log(img.src);
+        img.onload = function () {
+        dessiner(this);
+        };
+
+        function dessiner(img) {
+            
+        var canevas = document.getElementById("canevas");
+        var ctx = canevas.getContext("2d");
+        ctx.drawImage(img, 0, 0);
+        //img.style.display = "none";
+
+        var imageData = ctx.getImageData(0, 0, canevas.width, canevas.height);
+        var data = imageData.data;
+
+        var inversion = function () {
+            for (var i = 0; i < data.length; i += 4) {
+            data[i] = 255 - data[i]; // rouge
+            data[i + 1] = 255 - data[i + 1]; // vert
+            data[i + 2] = 255 - data[i + 2]; // bleu
+            }
+            ctx.putImageData(imageData, 0, 0);
+        };
+
+        var niveaudegris = function () {
+            for (var i = 0; i < data.length; i += 4) {
+            var moy = (data[i] + data[i + 1] + data[i + 2]) / 3;
+            data[i] = moy; // rouge
+            data[i + 1] = moy; // vert
+            data[i + 2] = moy; // bleu
+            }
+            ctx.putImageData(imageData, 0, 0);
+        };
+
+        var btninversion = document.getElementById("btninversion");
+        btninversion.addEventListener("click", inversion);
+        var btnniveaudegris = document.getElementById("btnniveaudegris");
+        btnniveaudegris.addEventListener("click", niveaudegris);
+        }
+    </script>
+
+
+    </body>
+</html>
