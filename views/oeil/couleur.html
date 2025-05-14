@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <body>
+    <canvas id="canevas" width="1920" height="512"></canvas>
+    <div>
+    <input id="btnniveaudegris" value="Niveau de gris" type="button" />
+    <input id="btninversion" value="Inversion" type="button" />
+
+    <input id="btnsansrouge" value="btnsansrouge" type="button" />
+    <input id="btnsansbleu" value="btnsansbleu" type="button" />
+    <input id="btnsansvert" value="btnsansvert" type="button" />
+    <input id="btntritanopie" value="btntritanopie" type="button" />
+    <input id="btnreset" value="btnreset" type="button" />
+    </div>
+    
+    <script>
+        var img = new Image();
+        img.crossOrigin = "anonymous";
+        img.src = "images/arc.webp";
+        console.log(img.src);
+        img.onload = function () {
+        dessiner(this);
+        };
+
+        function dessiner(img) {
+            
+        var canevas = document.getElementById("canevas");
+        var ctx = canevas.getContext("2d");
+        ctx.drawImage(img, 0, 0);
+        //img.style.display = "none";
+
+        var imageData = ctx.getImageData(0, 0, canevas.width, canevas.height);
+        var data = imageData.data;
+        var savedata = data;
+
+        console.log(data.length);
+
+        var inversion = function () {
+            for (var i = 0; i < data.length; i += 4) {
+            data[i] = 255 - data[i]; // rouge
+            data[i + 1] = 255 - data[i + 1]; // vert
+            data[i + 2] = 255 - data[i + 2]; // bleu
+            }
+            ctx.putImageData(imageData, 0, 0);
+        };
+
+        var niveaudegris = function () {
+            for (var i = 0; i < data.length; i += 4) {
+            var moy = (data[i] + data[i + 1] + data[i + 2]) / 3;
+            data[i] = moy; // rouge
+            data[i + 1] = moy; // vert
+            data[i + 2] = moy; // bleu
+            }
+            ctx.putImageData(imageData, 0, 0);
+        };
+
+        var sans_rouge = function () {
+            for (var i = 0; i < data.length; i += 4) {
+            data[i] = 0; // rouge
+            data[i + 1] = data[i + 1]; // vert
+            data[i + 2] = data[i + 2]; // bleu
+            }
+            ctx.putImageData(imageData, 0, 0);
+        };
+
+        var sans_bleu = function () {
+            for (var i = 0; i < data.length; i += 4) {
+            data[i] = data[i]; // rouge
+            data[i + 1] = data[i + 1]; // vert
+            data[i + 2] = 0; // bleu
+            }
+            ctx.putImageData(imageData, 0, 0);
+        };
+
+        var sans_vert = function () {
+            for (var i = 0; i < data.length; i += 4) {
+            data[i] = data[i]; // rouge
+            data[i + 1] = 0; // vert
+            data[i + 2] = data[i + 2]; // bleu
+            }
+            ctx.putImageData(imageData, 0, 0);
+        };
+
+        var tritanopie = function () {
+            for (var i = 0; i < data.length; i += 4) {
+            data[i] = data[i]; // rouge
+            data[i + 1] = data[i]; // vert
+            data[i + 2] = 0; // bleu
+            }
+            ctx.putImageData(imageData, 0, 0);
+        };
+
+        var reset = function () {
+            for (var i = 0; i < data.length; i += 4) {
+            data[i] = savedata[i]; // rouge
+            data[i + 1] = savedata[i + 1]; // vert
+            data[i + 2] = savedata[i + 2]; // bleu
+            }
+            ctx.putImageData(imageData, 0, 0);
+        };
+
+
+        var btninversion = document.getElementById("btninversion");
+        btninversion.addEventListener("click", inversion);
+        
+        var btnniveaudegris = document.getElementById("btnniveaudegris");
+        btnniveaudegris.addEventListener("click", niveaudegris);
+
+
+        var btnsansrouge = document.getElementById("btnsansrouge");
+        btnsansrouge.addEventListener("click", sans_rouge);
+
+        var btnsansbleu = document.getElementById("btnsansbleu");
+        btnsansbleu.addEventListener("click", sans_bleu);
+
+        var btnsansvert = document.getElementById("btnsansvert");
+        btnsansvert.addEventListener("click", sans_vert);
+
+        var btntritanopie = document.getElementById("btntritanopie");
+        btntritanopie.addEventListener("click", tritanopie);
+
+
+        var btnreset = document.getElementById("btnreset");
+        btnreset.addEventListener("click", reset);
+
+        }
+    </script>
+
+
+    </body>
+</html>
