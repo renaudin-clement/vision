@@ -35,10 +35,17 @@ aside{
 #fonds{
   background-image: url("../images/parchemin.jpg");
   border: solid; 
-  padding-left: 60px; 
-  padding-right: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  
+  /*! padding-left: 60px; */ 
+  /*! padding-right: 60px; */
   height: 853px;
   width: 1490px;
+}
+
+#fonds>section{
+  width: 100%;
 }
 
 aside ,footer,header{
@@ -54,4 +61,8 @@ aside ,footer,header{
 #buisson{
    height:60px;
     width:60px;
+}
+
+canvas{
+  background-color: white;
 }
