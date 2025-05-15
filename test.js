@@ -44,12 +44,16 @@ img.onload = function() {
 
 
 
-
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
 
 var pos = {x:0, y:0};
-console.log(pos);
- 
 
+// On récupère le décalage du canevas en x et y par rapport aux bords
+// de la page
+const rect = c.getBoundingClientRect();
+
+console.log(pos);
  
 document.addEventListener('mousemove', setPosition);
 document.addEventListener('mousedown', setPosition);
@@ -58,9 +62,16 @@ document.addEventListener('mouseenter', getMousePosition);
 //Fonction getPosition
 
 function setPosition(e) {
-  pos.x = e.clientX; //  clientX = Renvoie la coordonnée horizontale du pointeur de la souris par rapport à la fenêtre courante.
-  pos.y = e.clientY; //  clientY = Renvoie la coordonnée verticale du pointeur de la souris par rapport à la fenêtre courante.
-   console.log(pos.x,pos.y);
+  pos.x = e.clientX - rect.left; //  clientX = Renvoie la coordonnée horizontale du pointeur de la souris par rapport à la fenêtre courante.
+  pos.y = e.clientY - rect.top; //  clientY = Renvoie la coordonnée verticale du pointeur de la souris par rapport à la fenêtre courante.
+  
+  if( pos.x < 0 || pos.y <0 || pos.x > c.width || pos.y > c.height ){
+        console.log("no");
+  }else{
+        console.log( Math.round(pos.x) +" || "+  Math.round(pos.y));
+  }
+
+    
 };
 
 function getMousePosition(e) {
