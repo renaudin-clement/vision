@@ -107,17 +107,32 @@ function getMousePosition(e) {
 //                                                                 Partie Main
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+function chargersol(){
+  chargerimage("images/decort/herbe.png",5,positionImage = {x:238, y:303});
+  chargerimage("images/decort/herbe.png",5,positionImage = {x:783, y:776});
+  chargerimage("images/decort/herbe.png",5,positionImage = {x:1089, y:483});
+  chargerimage("images/decort/herbe.png",5,positionImage = {x:645, y:55});
+}
+
 
 function chargerPremierPlan() {
   chargerimage("images/decort/buisson2.png",5,positionImage = {x:22, y:22});
   chargerimage("images/decort/buisson2.png",5,positionImage = {x:999, y:202});
-  chargerimage("images/decort/maison.png",1,positionImage = {x:585, y:93});
-  chargerimage("images/decort/maison.png",2,positionImage = {x:1323, y:34});
+  chargerimage("images/animaux/9.png",5,positionImage = {x:1323, y:34});
+  chargerimage("images/animaux/6.png",5,positionImage = {x:585, y:93});
+  chargerimage("images/decort/buisson3.png",8,positionImage = {x:83, y:235});
+
+  chargerimage("images/decort/buisson3.png",8,positionImage = {x:922, y:24});
 }
 
 function chargerDeuxiemePlan() {
   chargerimage("images/decort/buisson2.png",5,positionImage = {x:223, y:400});
   chargerimage("images/decort/buisson2.png",5,positionImage = {x:715, y:538});
+  chargerimage("images/decort/buisson3.png",8,positionImage = {x:1049, y:404});
+  chargerimage("images/decort/buisson3.png",8,positionImage = {x:1170, y:689});
+  chargerimage("images/animaux/11.png",5,positionImage = {x:223, y:500});
+  chargerimage("images/animaux/4.png",5,positionImage = {x:715, y:538});
+  chargerimage("images/animaux/1.png",5,positionImage = {x:681, y:335});
 }
 
 function chargerTroisiemePlan() {
@@ -127,11 +142,46 @@ function chargerTroisiemePlan() {
 
 
 function chargerBackground() {
+  chargersol();
   chargerPremierPlan();
   chargerDeuxiemePlan();
   chargerTroisiemePlan();
 }
-
-
+ 
 
 chargerBackground();
+
+class point_apparition{
+  constructor(position) {
+      this.position = position;
+    }
+}
+
+
+class Animaux{
+  constructor(images, position) {
+      this.images = images;
+      this.position = position;
+    }
+}
+
+class Cible{
+  constructor(hauteur, largeur) {
+      this.hauteur = hauteur;
+      this.largeur = largeur;
+    }
+}
+
+class Buissons{
+  constructor(images, position) {
+      this.images = images;
+      this.position = position;
+    }
+}
+
+class TypeDeVue{
+  constructor(hauteur, largeur) {
+      this.hauteur = hauteur;
+      this.largeur = largeur;
+    }
+}
