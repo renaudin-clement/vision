@@ -9,8 +9,8 @@
 
 
 
-var c = document.getElementById("myCanvas");
-var ctx = c.getContext("2d");
+let c = document.getElementById("myCanvas");
+let ctx = c.getContext("2d");
 
 let positionImage = {x:0, y:0};
 
