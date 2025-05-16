@@ -158,12 +158,7 @@ class point_apparition{
 }
 
 
-class Animaux{
-  constructor(images, position) {
-      this.images = images;
-      this.position = position;
-    }
-}
+
 
 class Cible{
   constructor(hauteur, largeur) {
