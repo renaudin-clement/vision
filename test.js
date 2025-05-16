@@ -14,16 +14,21 @@ img.onload = function() {
     ctx.stroke();
 
 
-    ctx.font = "30px Arial";
-    ctx.fillText("C", 70, 50);
+    //ctx.font = "30px Arial";
+    //ctx.fillText("C", 70, 50);
 
     
 
     img = diminuer_taille(img,5);
 
     ctx.drawImage(img, 22, 22,img.width,img.height);
-    ctx.drawImage(img, 0, 222,img.width,img.height);
-    ctx.drawImage(img, 222, 0,img.width,img.height);
+    ctx.drawImage(img, 223, 400,img.width,img.height);
+    ctx.drawImage(img, 1130, 778,img.width,img.height);
+
+    ctx.drawImage(img, 159, 664,img.width,img.height);
+    ctx.drawImage(img, 715, 538,img.width,img.height);
+    ctx.drawImage(img, 999, 202,img.width,img.height);
+
 
     function diminuer_taille(img,diviser){
         img.width = Math.round(img.width/diviser);
@@ -80,3 +85,6 @@ function getMousePosition(e) {
 }
 
 
+function chargerimage(){
+  
+}
