@@ -2,7 +2,7 @@ class Animaux{
     constructor(position,tailles) {
       this.position = position;
       this.tailles = tailles;
- 
+  
     }
 
     voix() {
