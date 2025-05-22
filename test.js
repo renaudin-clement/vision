@@ -1,8 +1,4 @@
 
-
-
-
-
 // probleme de rapiditer
 //image non charger avant de lecrire sur le drawImage
 
