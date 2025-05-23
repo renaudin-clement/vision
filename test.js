@@ -1,4 +1,4 @@
-
+ import {Cursors} from "./cursors.js";
 // probleme de rapiditer
 //image non charger avant de lecrire sur le drawImage
 
@@ -9,6 +9,7 @@ let c = document.getElementById("myCanvas");
 let ctx = c.getContext("2d");
 
 let positionImage = {x:0, y:0};
+
 
 
 
@@ -60,12 +61,15 @@ function diminuer_taille(img,diviser){
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 var pos = {x:0, y:0};
+let cursor = new Cursors(pos,c);
+
 // On récupère le décalage du canevas en x et y par rapport aux bords de la page
 const rect = c.getBoundingClientRect();
 console.log(pos);
 document.addEventListener('mousemove', setPosition);
 document.addEventListener('mousedown', setPosition);
 document.addEventListener('mouseenter', getMousePosition); 
+document.addEventListener('click', cursor.clique); 
  
 //Fonction getPosition
 
@@ -77,6 +81,7 @@ function setPosition(e) {
         console.log("no");
   }else{
         console.log( Math.round(pos.x) +" || "+  Math.round(pos.y));
+        cursor.positionnerCursorsSansCalcule(e);
   }
 
     

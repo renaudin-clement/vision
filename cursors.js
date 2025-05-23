@@ -1,10 +1,16 @@
 
 
-class Cursors {
 
-    constructor(height, width) {
-        this.height = height;
-        this.width = width;
+export class Cursors {
+
+    constructor(pos,canvas) {
+        this.pos = pos;
+        this.pos.x = pos.x ;
+        this.pos.y = pos.y;
+
+        this.canvas = canvas;
+        this.canvas.x = canvas.x;
+        this.canvas.y = canvas.y;
 
         let link = document.createElement("link");
         link.setAttribute("rel","stylesheet");
@@ -18,14 +24,18 @@ class Cursors {
         cursor.classList.add("cursors");
         div.append(cursor);
         this.cursor = document.querySelector('.cursors');
+
+
+
+
     }
   
 
-    positionnercursors(){
+    positionnerCursorsAvecCalcule(){
         document.addEventListener('mousemove', e =>{
-            pos.x = e.clientX - rect.left; //  clientX = Renvoie la coordonnée horizontale du pointeur de la souris par rapport à la fenêtre courante.
-            pos.y = e.clientY - rect.top;
-            if(pos.x < 0 || pos.y <0 || pos.x > c.width || pos.y > c.height){
+            this.pos.x = e.clientX - rect.left; //  clientX = Renvoie la coordonnée horizontale du pointeur de la souris par rapport à la fenêtre courante.
+            this.pos.y = e.clientY - rect.top;
+            if(this.pos.x < 0 || this.pos.y <0 || this.pos.x > this.canvas.width || this.pos.y > this.canvas.height){
                 console.log("no");
             }else{
                 this.cursor.setAttribute('style','top:'+(e.pageY - 20)+'px; left:'+(e.pageX - 20)+'px')
@@ -34,14 +44,24 @@ class Cursors {
 
     }
 
+     positionnerCursorsSansCalcule(e){
+            if(this.pos.x < 0 || this.pos.y <0 || this.pos.x > this.canvas.width || this.pos.y > this.canvas.height){
+                console.log("no");
+            }else{
+                this.cursor.setAttribute('style','top:'+(e.pageY - 20)+'px; left:'+(e.pageX - 20)+'px')
+            }
+        }
+
     clique(){
-        document.addEventListener('click',() =>{
-        this.cursor.classList.add('expand');
-        setTimeout(() => {
-            this.cursor.classList.remove('expand');
-        }, 500);
-        });
+            this.cursor.classList.add('expand');
+                setTimeout(() => {
+                    cursor.classList.remove('expand');
+                }, 500);
     }
 
 
+
+
 }
+
+
