@@ -3,10 +3,12 @@ import {chargerimage} from "../utils/utils.js";
 
 let positionImage = {x:0, y:0};
 
-let sol
+
+let sol =[];
 let premierPlan   = [];
 let deuxiemePlan  = [];
 let troisiemePlan = [];
+let listeChargement =[[],[],[],[]];
  
 function chargersol(){
   let herbe1 = new Herbe("herbe.png",{x:238, y:303},5);
@@ -53,7 +55,10 @@ class Buissons{
   constructor(images, position,tailles) {
       this.images = images;
       this.position = position;
-      chargerimage("/assets/images/vision/ouisti/decort/"+images,tailles,positionImage = position);
+      this.tailles =tailles;
+  }
+  init(){
+    chargerimage("/assets/images/vision/ouisti/decort/"+images,tailles,positionImage = position);
   }
 }
 
@@ -61,6 +66,9 @@ class Herbe{
   constructor(images, position,tailles) {
       this.images = images;
       this.position = position;
-      chargerimage("/assets/images/vision/ouisti/decort/"+images,tailles,positionImage = position);
+      this.tailles =tailles;
+  }
+    init(){
+    chargerimage("/assets/images/vision/ouisti/decort/"+images,tailles,positionImage = position);
   }
 }
