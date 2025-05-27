@@ -1,4 +1,4 @@
- import {Cursors} from "./cursors.js";
+ import {Cursors} from "./js/composant/cursors.js";
 // probleme de rapiditer
 //image non charger avant de lecrire sur le drawImage
 
@@ -9,13 +9,13 @@ let c = document.getElementById("myCanvas");
 let ctx = c.getContext("2d");
 
 let positionImage = {x:0, y:0};
-
+ctx.clearRect( 0, 0, c.width, c.height);
+ctx.beginPath();
 
 
 
 
 function chargerimage(chemin,tailles =1,positionImage){
-
   let img = new Image();
   img.crossOrigin = "anonymous";
   img.src = chemin;
@@ -64,7 +64,7 @@ var pos = {x:0, y:0};
 let cursor = new Cursors(pos,c);
 
 // On récupère le décalage du canevas en x et y par rapport aux bords de la page
-const rect = c.getBoundingClientRect();
+let rect = c.getBoundingClientRect();
 console.log(pos);
 document.addEventListener('mousemove', setPosition);
 document.addEventListener('mousedown', setPosition);
@@ -74,12 +74,14 @@ document.addEventListener('click', cursor.clique);
 //Fonction getPosition
 
 function setPosition(e) {
+  rect = c.getBoundingClientRect();
   pos.x = e.clientX - rect.left; //  clientX = Renvoie la coordonnée horizontale du pointeur de la souris par rapport à la fenêtre courante.
   pos.y = e.clientY - rect.top; //  clientY = Renvoie la coordonnée verticale du pointeur de la souris par rapport à la fenêtre courante.
   
   if( pos.x < 0 || pos.y <0 || pos.x > c.width || pos.y > c.height ){
         console.log("no");
   }else{
+        console.log("c.height : " + c.height);
         console.log( Math.round(pos.x) +" || "+  Math.round(pos.y));
         cursor.positionnerCursorsSansCalcule(e);
   }
@@ -149,14 +151,36 @@ function chargerBackground() {
   chargerTroisiemePlan();
 }
  
-
 chargerBackground();
+
+console.log("marche");
+
+
+function clearCanvas() {
+    const canvas = document.getElementById('myCanvas');
+    const ctx = canvas.getContext('2d');
+    ctx.clearRect( 0, 0, canvas.width, canvas.height);
+    ctx.beginPath();
+}
+
+clearCanvas();
 
 class point_apparition{
   constructor(position) {
       this.position = position;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -181,3 +205,4 @@ class TypeDeVue{
       this.largeur = largeur;
     }
 }
+

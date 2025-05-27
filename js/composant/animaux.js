@@ -9,8 +9,6 @@ class Animaux{
        console.log("crie");
     }
 
-
-
 }
 
 class Tigre extends Animaux{

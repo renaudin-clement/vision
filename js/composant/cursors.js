@@ -25,8 +25,7 @@ export class Cursors {
         div.append(cursor);
         this.cursor = document.querySelector('.cursors');
 
-
-
+        this.rect = this.canvas.getBoundingClientRect();
 
     }
   
