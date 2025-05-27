@@ -115,12 +115,6 @@ class Cible{
     }
 }
 
-class Buissons{
-  constructor(images, position) {
-      this.images = images;
-      this.position = position;
-    }
-}
 
 class TypeDeVue{
   constructor(hauteur, largeur) {
