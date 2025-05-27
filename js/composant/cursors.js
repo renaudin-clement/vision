@@ -15,7 +15,7 @@ export class Cursors {
         let link = document.createElement("link");
         link.setAttribute("rel","stylesheet");
         link.setAttribute("type","text/css");
-        link.setAttribute("href","css/cursors.css");
+        link.setAttribute("href","assets/css/cursors.css");
         document.head.append(link)
         
         

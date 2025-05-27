@@ -162,3 +162,12 @@ class Chien extends Animaux{
        console.log("waf");
     }
 }
+
+
+
+
+chargerimage("images/animaux/9.png",5,positionImage = {x:1323, y:34});
+chargerimage("images/animaux/6.png",5,positionImage = {x:585, y:93});
+chargerimage("images/animaux/11.png",5,positionImage = {x:223, y:500});
+chargerimage("images/animaux/4.png",5,positionImage = {x:715, y:538});
+chargerimage("images/animaux/1.png",5,positionImage = {x:681, y:335});
