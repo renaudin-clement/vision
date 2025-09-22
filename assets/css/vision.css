@@ -1,0 +1,71 @@
+
+body{
+margin: 0;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+  flex-grow: 1;
+  margin: 0;
+  padding: 0;
+  
+  background-color: red;
+  align-content: center;
+  text-align: center;
+
+  
+}
+
+main , header, footer{
+  width: 100%;
+}
+
+main , header, footer,aside{
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+aside{
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+  text-align: center;
+  align-items: center;
+
+}
+
+#fonds{
+  background-image: url("../images/utilitaire/parchemin.jpg");
+  border: solid; 
+  display: flex;
+  flex-wrap: wrap;
+  
+  /*! padding-left: 60px; */ 
+  /*! padding-right: 60px; */
+  /*! height: 853px; */
+  /*! width: 1490px; */
+}
+
+#fonds>section{
+  width: 100%;
+}
+
+aside ,footer,header{
+  background-color: beige;
+}
+
+
+#ouistie {
+   height:60px;
+    width:60px;
+}
+
+#buisson{
+   height:60px;
+    width:60px;
+}
+
+canvas{
+  background-color: white;
+}
+

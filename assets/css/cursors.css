@@ -1,0 +1,58 @@
+/*remplacer body par canvas*/
+canvas{
+    margin: 0;
+    padding: 0;
+    cursor: none;
+    overflow: hidden;
+} 
+.cursors{
+    width: 40px;
+    height: 40px;
+    cursor: none;
+    border: 1px dashed white;
+    border-radius: 50%;
+    position: absolute;
+    animation: Anim1 2.5s infinite alternate;
+}
+
+.cursors::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 20px;
+    height: 20px;
+    background: darkorchid;
+    border-radius: 50%;
+}
+
+.expand{
+    animation: Anim2 .5s;
+    background: darkorchid;
+    border: 1px solid darkorchid;
+}
+
+@keyframes Anim1 {
+from{
+    transform: scale(1) rotate(0deg);
+}
+to{
+    transform: scale(0.7) rotate(90deg);
+}
+    
+}
+
+@keyframes Anim2 {
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(2);
+    }
+    100%{
+        transform: scale(1);
+        opacity: 0;
+    }
+    
+}

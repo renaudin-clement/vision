@@ -1,0 +1,213 @@
+class Animaux{
+   constructor(position,tailles) {
+      this.position = position;
+      this.tailles = tailles;
+  
+   }
+   init(){
+
+   }
+
+   voix() {
+       console.log("crie");
+   }
+
+}
+
+class Tigre extends Animaux{
+   constructor(position,tailles) {
+      super(position,tailles);
+      this.images = "images/animaux/1.png";
+      this.position = position;
+      this.tailles = tailles;
+      this.name ="Tigre";
+   }
+   init(){
+      
+   }
+   voix() {
+       console.log("Rrrrrrr");
+   }
+}
+
+class Pandas extends Animaux{
+   constructor(position,tailles) {
+      super(position,tailles);
+      this.images = "images/animaux/2.png";
+      this.position = position;
+      this.tailles = tailles;
+      this.name ="Pandas";
+   }
+   init(){
+      
+    }
+
+   voix() {
+       console.log("crie");
+   }
+}
+
+class Singe extends Animaux{
+   constructor(position,tailles) {
+      super(position,tailles);
+      this.images = "images/animaux/3.png";
+      this.position = position;
+      this.tailles = tailles;
+      this.name ="Singe";
+   }
+   init(){
+      
+   }
+
+   voix() {
+       console.log("crie");
+   }
+}
+
+class Zebre extends Animaux{
+   constructor(position,tailles) {
+      super(position,tailles);
+      this.images = "images/animaux/4.png";
+      this.position = position;
+      this.tailles = tailles;
+      this.name ="Zebre";
+   }
+   init(){
+      
+   }
+
+   voix() {
+       console.log("crie");
+   }
+}
+
+class Poule extends Animaux{
+   constructor(position,tailles) {
+      super(position,tailles);
+      this.images = "images/animaux/6.png";
+      this.position = position;
+      this.tailles = tailles;
+      this.name ="Poule";
+   }
+   init(){
+         
+   }
+
+   voix() {
+       console.log("piupiu");
+   }
+}
+
+class Hiboux extends Animaux{
+   constructor(position,tailles) {
+      super(position,tailles);
+      this.images =  "images/animaux/7.png";
+      this.position = position;
+      this.tailles = tailles;
+      this.name ="Hiboux";
+   }
+
+   init(){
+      
+   }
+
+   voix() {
+      console.log("houhou");
+   }
+}
+
+class Chevre extends Animaux{
+   constructor(position,tailles) {
+      super(position,tailles);
+      this.images = "images/animaux/8.png";
+      this.position = position;
+      this.tailles = tailles;
+      this.name ="Chevre";
+   }
+   init(){
+      
+   }
+
+   voix() {
+       console.log("bee");
+   }
+}
+
+
+
+class Cerf extends Animaux{
+   constructor(position,tailles) {
+      super(position,tailles);
+      this.images = "images/animaux/9.png";
+      this.position = position;
+      this.tailles = tailles;
+      this.name ="Cerf";
+   }
+   init(){
+      
+   }
+
+   voix() {
+       console.log("crie");
+   }
+}
+
+class Vache extends Animaux{
+   constructor(position,tailles) {
+      super(position,tailles);
+      this.images = "images/animaux/10.png";
+      this.position = position;
+      this.tailles = tailles;
+      this.name ="Vache";
+   }
+   init(){
+      
+   }
+
+   voix() {
+       console.log("meu");
+   }
+}
+
+class Ane extends Animaux{
+   constructor(position,tailles) {
+      super(position,tailles);
+      this.images = "images/animaux/11.png";
+      this.position = position;
+      this.tailles = tailles;
+      this.name ="Ane";
+   }
+   init(){
+      
+   }
+
+   voix() {
+       console.log("i en i en");
+   }
+}
+
+class Chien extends Animaux{
+   constructor(position,tailles) {
+      super(position,tailles);
+      this.images = "images/animaux/12.png";
+      this.position = position;
+      this.tailles = tailles;
+      this.name ="Chien";
+   }
+   init(){
+      
+   }
+
+   voix() {
+       console.log("waf");
+   }
+}
+
+
+
+
+chargerimage("images/animaux/9.png",5,positionImage = {x:1323, y:34});
+chargerimage("images/animaux/6.png",5,positionImage = {x:585, y:93});
+chargerimage("images/animaux/11.png",5,positionImage = {x:223, y:500});
+chargerimage("images/animaux/4.png",5,positionImage = {x:715, y:538});
+chargerimage("images/animaux/1.png",5,positionImage = {x:681, y:335});
